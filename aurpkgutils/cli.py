@@ -4,9 +4,16 @@ from typing import Optional
 
 import typer
 
-from aurpkgutils import __app_name__, __version__
+from aurpkgutils import __app_name__, __version__, aurpkgutils
 
 app = typer.Typer()
+
+
+@app.command()
+def check() -> None:
+    aurpkgutils.check_latest(
+        url="https://github.com/marcelotduarte/cx_Freeze/releases/"
+    )
 
 
 @app.command()
@@ -36,3 +43,7 @@ def main(
 ) -> None:
 
     return
+
+
+# def get_latest() -> aurpkgutils.AurPkgUtils:
+#     return aurpkgutils.AurPkgUtils()
