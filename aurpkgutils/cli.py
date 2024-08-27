@@ -11,9 +11,7 @@ app = typer.Typer()
 
 @app.command()
 def check() -> None:
-    aurpkgutils.check_latest(
-        url="https://github.com/marcelotduarte/cx_Freeze/releases/"
-    )
+    aurpkgutils.check()
 
 
 @app.command()
